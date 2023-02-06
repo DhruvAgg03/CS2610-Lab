@@ -127,14 +127,24 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
 	or ORF(overF,mint3,mint4);
 	*/
 	
-	xor XOR2(equal,carry[3],carry2[3]);
-	//xor XOR1(equal,carry2[3],carry2L[3]);
-	not NOT3(sign_bar,sign);
-	and AND1(mint1,sign_bar,carry2[3]);
-	and AND2(mint2,sign,equal);
-	
-	or ORF(overF,mint1,mint2);
-	
+	wire o1,o2;
+    wire x1,x2;
+    wire last_bar, c2l_bar;
+    not Nott1(last_bar, carry2[3]);
+    not Nott2(c2l_bar, carry2L[3]);
+
+    
+    buf Buf1 (o1,carry2[3]);
+    xor Xor1 (o2, carry2[3], carry2L[3]);
+
+    wire sign_bar;
+    not Not1 (sign_bar, sign); 
+
+    wire mint1, mint2;
+    and And1 (mint1, sign_bar, o1);
+    and And2 (mint2, sign,  o2);
+
+    or Or (OF, mint1, mint2);
 
 endmodule
 	
