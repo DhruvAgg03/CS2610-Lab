@@ -13,6 +13,7 @@ module CLA16_tb ();
     initial begin
 
         // unsigned case 1 no carry
+        $display("unsigned case 1 no carry");
         A = 16'h0123;
         B = 16'h0345;
         subtract = 0;
@@ -27,6 +28,7 @@ module CLA16_tb ();
 
 
         // unsigned case 2 carry
+        $display("unsigned case 2 carry");
         A = 16'hF123;
         B = 16'h1345;
         subtract = 0;
@@ -36,6 +38,7 @@ module CLA16_tb ();
         $display("Ans should be RESULT = 0468, OvFlow = 1\n");
 
         // unsigned case 3 subtraction
+        $display("unsigned case 3 subtraction");
         A = 16'hF123;
         B = 16'h1345;
         subtract = 1;
@@ -45,6 +48,7 @@ module CLA16_tb ();
         $display("Ans should be RESULT = DDDE, OvFlow = 0\n");
 
         // signed case 1 no overflow, positive
+        $display("signed case 1 no overflow, positive");
         A = 16'h0123;
         B = 16'h0345;
         subtract = 0;
@@ -54,16 +58,22 @@ module CLA16_tb ();
         $display("Ans should be RESULT = 0468, OvFlow = 0\n");
 
         // signed case 2  overflow, positive
+        $display("signed case 2  overflow, positive");
         A = 16'h7123;
         B = 16'h7345;
         subtract = 0;
+<<<<<<< HEAD
         sign = 1
         ;
+=======
+        sign = 1;
+>>>>>>> c1556286f00b63a0393ad38e2ffe11efc1d1ce5d
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = E468, OvFlow = 1\n");
 
         // signed case 3 no overflow, negative
+        $display("signed case 3 no overflow, negative");
         A = 16'hF123;
         B = 16'hF345;
         subtract = 0;
