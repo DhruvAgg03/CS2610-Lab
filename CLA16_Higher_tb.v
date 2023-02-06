@@ -1,6 +1,6 @@
 `timescale 1ns/100ps
 
-module CLA16_tb ();
+module CLA16_Higher_tb ();
     
     reg [15:0] A, B;
     reg subtract;   //  equals 1 for subtraction
@@ -8,7 +8,7 @@ module CLA16_tb ();
     wire [15:0] res;
     wire ovflow;
 
-    CLA_NoHigher __C (res, ovflow, A, B, subtract, sign);
+    CLA16_higher __C (res, ovflow, A, B, subtract, sign);
 
     initial begin
 
@@ -18,8 +18,8 @@ module CLA16_tb ();
         subtract = 0;
         sign = 0;
 
-        $dumpfile("CLA16_tb.vcd");
-        $dumpvars(0, CLA16_tb);
+        $dumpfile("CLA16_Higher_tb.vcd");
+        $dumpvars(0, CLA16_Higher_tb);
 
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
