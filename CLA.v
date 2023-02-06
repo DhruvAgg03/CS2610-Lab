@@ -42,13 +42,12 @@ module CLA(sum,carry,C2L,A,B,Cin);
 endmodule
 
 
-module CLA16_higher(sum,overF,c,A,B,sub,sign);
+module CLA16_higher(sum,overF,A,B,sub,sign);
 	input[15:0] A;
 	input[15:0] B;
 	input sub;
 	input sign;
 	output[15:0] sum;
-	output c;
 	output overF;
 	
 	wire[15:0] op3;
@@ -113,7 +112,6 @@ module CLA16_higher(sum,overF,c,A,B,sub,sign);
 	CLA cla3(sum[11:8],carry2[2],carry2L[2],A[11:8],B[11:8],carry[1]);
 	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],B[15:12],carry[2]);
 	
-	buf(c,carry[3]);
 	
 	wire o1,o2;
 	buf Buf1(o1,carry[3]);
