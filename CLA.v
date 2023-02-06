@@ -113,17 +113,16 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
 	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],op3[15:12],carry[2]);
 	
 	
-	wire o1,o2;
-	buf Buf1(o1,carry[3]);
-	xor Xor2(o2,carry[3],carry2L[3]);
+	xor XOR1(equalC,carry[3],carry2L[3]);
+	not NOT1(sign_bar,sign);
+	not NOT2(sub_bar,sub);
+	and And1(mint1,sign_bar,sub_bar);
+	or OR1(mint2,sign,sub);
 	
-	wire sign_bar;
-	not not1(sign_bar,sign);
+	and AND2(mint3,mint1,carry[3]);
+	and AND3(mint4,mint2,equalC);
 	
-	and And1(mint1,sign_bar,o1);
-	and And2(mint2,sign,o2);
-	
-	or overflow(overF,mint1,mint2);
+	or ORF(overF,mint3,mint4);
 
 endmodule
 	
