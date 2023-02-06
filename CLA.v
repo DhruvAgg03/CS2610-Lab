@@ -107,10 +107,10 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
 	wire carry2[3:0];
 	wire carry2L[3:0];
 	
-	CLA cla1(sum[3:0],carry2[0],carry2L[0],A[3:0],B[3:0],Cin);
-	CLA cla2(sum[7:4],carry2[1],carry2L[1],A[7:4],B[7:4],carry[0]);
-	CLA cla3(sum[11:8],carry2[2],carry2L[2],A[11:8],B[11:8],carry[1]);
-	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],B[15:12],carry[2]);
+	CLA cla1(sum[3:0],carry2[0],carry2L[0],A[3:0],op3[3:0],Cin);
+	CLA cla2(sum[7:4],carry2[1],carry2L[1],A[7:4],op3[7:4],carry[0]);
+	CLA cla3(sum[11:8],carry2[2],carry2L[2],A[11:8],op3[11:8],carry[1]);
+	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],op3[15:12],carry[2]);
 	
 	
 	wire o1,o2;
