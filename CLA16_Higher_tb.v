@@ -22,7 +22,7 @@ module CLA16_tb ();
         $dumpvars(0, CLA16_tb);
 
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 0468, OvFlow = 0\n\n");
 
 
@@ -32,7 +32,7 @@ module CLA16_tb ();
         subtract = 0;
         sign = 0;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 0468, OvFlow = 1\n\n");
 
         // unsigned case 3 subtraction
@@ -41,7 +41,7 @@ module CLA16_tb ();
         subtract = 1;
         sign = 0;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = DDDE, OvFlow = 0\n\n");
 
         // signed case 1 no overflow, positive
@@ -50,7 +50,7 @@ module CLA16_tb ();
         subtract = 0;
         sign = 0;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 0468, OvFlow = 0\n\n");
 
         // signed case 2  overflow, positive
@@ -59,7 +59,7 @@ module CLA16_tb ();
         subtract = 0;
         sign = 0;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = E468, OvFlow = 0\n\n");
 
         // signed case 3 no overflow, negative
@@ -68,7 +68,7 @@ module CLA16_tb ();
         subtract = 0;
         sign = 0;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = E468, OvFlow = 0\n\n");
 
         // signed case 4 overflow, negative
@@ -77,7 +77,7 @@ module CLA16_tb ();
         subtract = 0;
         sign = 0;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 4468, OvFlow = 1\n\n");
 
         // signed case 5 addition of opposite signs
@@ -86,7 +86,7 @@ module CLA16_tb ();
         subtract = 0;
         sign = 1;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 0468, OvFlow = 0\n\n");
 
         // signed case 6 subtraction of opposite signs without overflow
@@ -95,7 +95,7 @@ module CLA16_tb ();
         subtract = 1;
         sign = 1;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 2DDE, OvFlow = 0\n\n");
 
         // signed case 7 subtraction of opposite signs with overflow
@@ -104,7 +104,7 @@ module CLA16_tb ();
         subtract = 1;
         sign = 1;
         #20
-        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b\n\n", A, B, res, ovflow);
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = CDDE, OvFlow = 1\n\n");
 
     end
