@@ -113,7 +113,8 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
 	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],op3[15:12],carry[2]);
 	
 	
-	xor XOR1(equalC,carry[3],carry2L[3]);
+	xor XOR1(equal,carry[3],carry2L[3]);
+	not NOT3(equalC,equal);
 	not NOT1(sign_bar,sign);
 	not NOT2(sub_bar,sub);
 	and And1(mint1,sign_bar,sub_bar);
