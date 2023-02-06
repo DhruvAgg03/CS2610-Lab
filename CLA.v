@@ -59,7 +59,7 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
 	wire[15:0] p;
 	wire[15:0] g;
 	and And[15:0](g[15:0],A[15:0],op3[15:0]);
-	xor XOR[15:0](p[15:0],A[15:0],op3);
+	xor XOR[15:0](p[15:0],A[15:0],op3[15:0]);
 	
 	and(p0I,p[3],p[2],p[1],p[0]);
 	and(p1I,p[7],p[6],p[5],p[4]);
