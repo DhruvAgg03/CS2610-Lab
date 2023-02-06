@@ -1,7 +1,7 @@
 `timescale 1ns/100ps
 
 module HalfAdder(
-	output wire carry, sum, 
+	output wire carry, sum,
 	input wire a, b
 );
 	xor #2 (sum, a, b);
