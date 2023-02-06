@@ -42,9 +42,10 @@ module CLA(sum,carry,C2L,A,B,Cin);
 endmodule
 
 
-module CLA16_higher(sum,c,A,B);
+module CLA16_higher(sum,c,A,B,subtract,sign);
 	input wire[15:0]A;
 	input wire [15:0]B;
+	input wire subtract,sign;
 	output wire[15:0] sum;
 	output c;
 	
