@@ -24,6 +24,6 @@ module CLA_tb();
         #10  A = A + 1;
     
     always
-        #80 B = B + 1;
+        #160 B = B + 1;
 
 endmodule
