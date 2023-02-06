@@ -1,11 +1,12 @@
 `timescale 1ns/1ns
 
-module CLA(sum,carry,A,B,Cin); //C2L
+module CLA(sum,carry,C2L,A,B,Cin); 
 	input wire [3:0]A;
 	input wire [3:0]B;
 	input wire Cin;
 	output wire[3:0]sum;
 	output carry;
+	output C2L;
 
 	wire [3:0]p;
 	wire [3:0]g;
@@ -15,7 +16,7 @@ module CLA(sum,carry,A,B,Cin); //C2L
 	
 	wire[3:0]c;
 	
-	assign c[0] = Cin;
+	buf(c[0],Cin);
 	and(p0c0,p[0],c[0]);
 	or(c[1],p0c0,g[0]);
 	
@@ -27,6 +28,8 @@ module CLA(sum,carry,A,B,Cin); //C2L
 	and(p2p1g0,p[2],p[1],g[0]);
 	and(p2g1,p[2],g[1]);
 	or(c[3],p2p1p0c0,p2p1g0,p2g1,g[2]);
+	
+	buf(C2L,c[3]);
 	
 	and(p3p2p1p0c0,p[3],p[2],p[1],p[0],c[0]);
 	and(p3p2p1g0,p[3],p[2],p[1],g[0]);
@@ -104,7 +107,7 @@ module CLA16_higher(sum,c,A,B,Cin);
 	CLA cla3(sum[11:8],carry2[2],A[11:8],B[11:8],carry[1]);
 	CLA cla4(sum[15:12],carry2[3],A[15:12],B[15:12],carry[2]);
 	
-	assign c = carry[3];
+	buf(c,carry[3]);
 
 endmodule
 	
