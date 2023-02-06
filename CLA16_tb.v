@@ -2,10 +2,10 @@
 
 module CLA16_tb ();
     
-    reg [16:0] A, B;
+    reg [15:0] A, B;
     reg subtract;   //  equals 1 for subtraction
     reg sign;       // equals 1 for signed
-    wire [16:0] res;
+    wire [15:0] res;
     wire ovflow;
 
     CLA_NoHigher __C (res, ovflow, A, B, subtract, sign);

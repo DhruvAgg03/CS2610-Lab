@@ -27,7 +27,7 @@ module CLA_NoHigher(result,OF,operand1,operand2,add,sign);
 
     wire mint1, mint2;
     and And1 (mint1, sign_bar, o1);
-    and And2 (mint2, sing,  o2);
+    and And2 (mint2, sign,  o2);
 
     or Or (OF, mint1, mint2);
 
