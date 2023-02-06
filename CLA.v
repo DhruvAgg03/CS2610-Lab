@@ -112,18 +112,29 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
 	CLA cla3(sum[11:8],carry2[2],carry2L[2],A[11:8],op3[11:8],carry[1]);
 	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],op3[15:12],carry[2]);
 	
-	
-	xor XOR1(equal,carry[3],carry2L[3]);
+	/*
+	xor(check,carry[3],carry2[3]);
+	xor XOR1(equal,carry2[3],carry2L[3]);
 	not NOT3(equalC,equal);
 	not NOT1(sign_bar,sign);
 	not NOT2(sub_bar,sub);
 	and And1(mint1,sign_bar,sub_bar);
 	or OR1(mint2,sign,sub);
 	
-	and AND2(mint3,mint1,carry[3]);
+	and AND2(mint3,mint1,carry2[3]);
 	and AND3(mint4,mint2,equalC);
 	
 	or ORF(overF,mint3,mint4);
+	*/
+	
+	xor XOR2(equal,carry[3],carry2[3]);
+	//xor XOR1(equal,carry2[3],carry2L[3]);
+	not NOT3(sign_bar,sign);
+	and AND1(mint1,sign_bar,carry2[3]);
+	and AND2(mint2,sign,equal);
+	
+	or ORF(overF,mint1,mint2);
+	
 
 endmodule
 	
