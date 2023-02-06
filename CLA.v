@@ -42,23 +42,25 @@ module CLA(sum,carry,C2L,A,B,Cin);
 endmodule
 
 
-module CLA16_higher(sum,c,A,B,sub,sign);
-	input wire[15:0]A;
-	input wire [15:0]B;
-	input wire sub,sign;
-	output wire[15:0] sum;
+module CLA16_higher(sum,overF,c,A,B,sub,sign);
+	input[15:0] A;
+	input[15:0] B;
+	input sub;
+	input sign;
+	output[15:0] sum;
 	output c;
+	output overF;
 	
-	wire op3[15:0];
+	wire[15:0] op3;
+
 	xor XOR_op[15:0](op3,B,sub);
-	
 	wire[3:0] carry;
 	wire Cin;
 	buf(Cin,sub);
 	wire[15:0] p;
 	wire[15:0] g;
-	and And[15:0](g,A,op3);
-	xor XOR[15:0](p,A,op3);
+	and And[15:0](g[15:0],A[15:0],op3[15:0]);
+	xor XOR[15:0](p[15:0],A[15:0],op3);
 	
 	and(p0I,p[3],p[2],p[1],p[0]);
 	and(p1I,p[7],p[6],p[5],p[4]);
@@ -107,11 +109,23 @@ module CLA16_higher(sum,c,A,B,sub,sign);
 	wire carry2L[3:0];
 	
 	CLA cla1(sum[3:0],carry2[0],carry2L[0],A[3:0],B[3:0],Cin);
-	CLA cla2(sum[7:4],carry2[1],carry2L[0],A[7:4],B[7:4],carry[0]);
-	CLA cla3(sum[11:8],carry2[2],carry2L[0],A[11:8],B[11:8],carry[1]);
-	CLA cla4(sum[15:12],carry2[3],carry2L[0],A[15:12],B[15:12],carry[2]);
+	CLA cla2(sum[7:4],carry2[1],carry2L[1],A[7:4],B[7:4],carry[0]);
+	CLA cla3(sum[11:8],carry2[2],carry2L[2],A[11:8],B[11:8],carry[1]);
+	CLA cla4(sum[15:12],carry2[3],carry2L[3],A[15:12],B[15:12],carry[2]);
 	
 	buf(c,carry[3]);
+	
+	wire o1,o2;
+	buf Buf1(o1,carry[3]);
+	xor Xor2(o2,carry[3],carry2L[3]);
+	
+	wire sign_bar;
+	not not1(sign_bar,sign);
+	
+	and And1(mint1,sign_bar,o1);
+	and And2(mint2,sign,o2);
+	
+	or overflow(overF,mint1,mint2);
 
 endmodule
 	
