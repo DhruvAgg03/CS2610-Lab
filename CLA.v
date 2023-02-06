@@ -43,11 +43,11 @@ endmodule
 
 
 module CLA16_higher(sum,overF,A,B,sub,sign);
-	input[15:0] A;
-	input[15:0] B;
+	input wire [15:0] A;
+	input wire [15:0] B;
 	input sub;
 	input sign;
-	output[15:0] sum;
+	output wire [15:0] sum;
 	output overF;
 	
 	wire[15:0] op3;
