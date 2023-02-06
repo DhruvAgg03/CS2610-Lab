@@ -8,6 +8,8 @@ module CLA16_tb ();
     wire [16:0] res;
     wire ovflow;
 
+    CLA_NoHigher __C (res, ovflow, A, B, subtract, sign);
+
     initial begin
 
         // unsigned case 1 no carry
