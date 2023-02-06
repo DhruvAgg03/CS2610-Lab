@@ -62,10 +62,18 @@ module CLA16_tb ();
         A = 16'h7123;
         B = 16'h7345;
         subtract = 0;
+<<<<<<< HEAD:Lab1/CLA16_Higher_tb.v
         sign = 1;
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = E468, OvFlow = 0\n");
+=======
+        sign = 1
+        ;
+        #20
+        $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
+        $display("Ans should be RESULT = E468, OvFlow = 1\n");
+>>>>>>> ffdd508211399c14b9863fee29f63d8f550e877f:CLA16_Higher_tb.v
 
         // signed case 3 no overflow, negative
         $display("signed case 3 no overflow, negative");

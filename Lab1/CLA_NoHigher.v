@@ -23,11 +23,17 @@ module CLA_NoHigher(result,OF,operand1,operand2,sub,sign);
 
     wire o1,o2;
     wire x1,x2;
+<<<<<<< HEAD:Lab1/CLA_NoHigher.v
     wire last_bar, c2l_bar;
     not Nott1(last_bar, carries[3]);
     not Nott2(c2l_bar, c2l[3]);
 
     
+=======
+    wire sub_bar;
+    not N2(sub_bar,sub);
+
+>>>>>>> ffdd508211399c14b9863fee29f63d8f550e877f:CLA_NoHigher.v
     buf Buf1 (o1,carries[3]);
     xor Xor1 (o2, carries[3], c2l[3]);
 
@@ -35,8 +41,13 @@ module CLA_NoHigher(result,OF,operand1,operand2,sub,sign);
     not Not1 (sign_bar, sign); 
 
     wire mint1, mint2;
+<<<<<<< HEAD:Lab1/CLA_NoHigher.v
     and And1 (mint1, sign_bar, o1);
     and And2 (mint2, sign,  o2);
+=======
+    and And1 (mint1, sign_bar, o1,sub_bar);
+    and And2 (mint2, sign, o2);
+>>>>>>> ffdd508211399c14b9863fee29f63d8f550e877f:CLA_NoHigher.v
 
     or Or (OF, mint1, mint2);
 
