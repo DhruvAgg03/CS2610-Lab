@@ -48,7 +48,7 @@ module CLA16_tb ();
         A = 16'h0123;
         B = 16'h0345;
         subtract = 0;
-        sign = 0;
+        sign = 1;
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 0468, OvFlow = 0\n");
@@ -57,16 +57,17 @@ module CLA16_tb ();
         A = 16'h7123;
         B = 16'h7345;
         subtract = 0;
-        sign = 0;
+        sign = 1
+        ;
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
-        $display("Ans should be RESULT = E468, OvFlow = 0\n");
+        $display("Ans should be RESULT = E468, OvFlow = 1\n");
 
         // signed case 3 no overflow, negative
         A = 16'hF123;
         B = 16'hF345;
         subtract = 0;
-        sign = 0;
+        sign = 1;
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = E468, OvFlow = 0\n");
@@ -75,7 +76,7 @@ module CLA16_tb ();
         A = 16'hA123;
         B = 16'hA345;
         subtract = 0;
-        sign = 0;
+        sign = 1;
         #20
         $display("A = %x, B = %x, RESULT = %x, OvFlow = %b", A, B, res, ovflow);
         $display("Ans should be RESULT = 4468, OvFlow = 1\n");
