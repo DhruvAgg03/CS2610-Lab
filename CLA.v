@@ -1,10 +1,12 @@
 `timescale 1ns/1ns
 
-module CLA(sum,carry,A,B);
+module CLA(sum,carry,C2L,A,B,Cin); 
 	input wire [3:0]A;
 	input wire [3:0]B;
+	input wire Cin;
 	output wire[3:0]sum;
 	output carry;
+	output C2L;
 
 	wire [3:0]p;
 	wire [3:0]g;
@@ -14,7 +16,7 @@ module CLA(sum,carry,A,B);
 	
 	wire[3:0]c;
 	
-	assign c[0] = 0;
+	buf(c[0],Cin);
 	and(p0c0,p[0],c[0]);
 	or(c[1],p0c0,g[0]);
 	
@@ -27,6 +29,8 @@ module CLA(sum,carry,A,B);
 	and(p2g1,p[2],g[1]);
 	or(c[3],p2p1p0c0,p2p1g0,p2g1,g[2]);
 	
+	buf(C2L,c[3]);
+	
 	and(p3p2p1p0c0,p[3],p[2],p[1],p[0],c[0]);
 	and(p3p2p1g0,p[3],p[2],p[1],g[0]);
 	and(p3p2g1,p[3],p[2],g[1]);
@@ -37,13 +41,75 @@ module CLA(sum,carry,A,B);
 	
 endmodule
 
-/*
-module CLA16(sum,carry,A,B);
+
+module CLA16_higher(sum,c,A,B,Cin);
 	input wire[15:0]A;
 	input wire [15:0]B;
 	output wire[15:0] sum;
-	output carry;
+	output c;
+	input wire Cin;
 	
-	wire carry1,carry2,carry3;
-	CLA cla1(sum[3:0],carry1,A[3:0],B[3:0])
-	*/
+	
+	wire[3:0] carry;
+	
+	wire[15:0] p;
+	wire[15:0] g;
+	and And[15:0](g,A,B);
+	xor XOR[15:0](p,A,B);
+	
+	and(p0I,p[3],p[2],p[1],p[0]);
+	and(p1I,p[7],p[6],p[5],p[4]);
+	and(p2I,p[11],p[10],p[9],p[8]);
+	and(p3I,p[15],p[14],p[13],p[12]);
+	
+	and(p3p2p1g0,p[3],p[2],p[1],g[0]);
+	and(p3p2g1,p[3],p[2],g[1]);
+	and(p3g2,p[3],g[2]);
+	and(g0I,p3p2p1g0,p3p2g1,p3g2,g[3]);
+	
+	and(p7p6p5g4,p[7],p[6],p[5],g[4]);
+	and(p7p6g5,p[7],p[6],g[5]);
+	and(p7g6,p[7],g[6]);
+	and(g1I,p7p6p5g4,p7p6g5,p7g6,g[7]);
+	
+	and(p11p10p9g8,p[11],p[10],p[9],g[8]);
+	and(p11p10g9,p[11],p[10],g[9]);
+	and(p11g10,p[11],g[10]);
+	and(g2I,p11p10p9g8,p11p10g9,p11g10,g[11]);
+	
+	and(p15p14p13g12,p[15],p[14],p[13],g[12]);
+	and(p15p14g13,p[15],p[14],g[13]);
+	and(p15g14,p[15],g[14]);
+	and(g3I,p15p14p13g12,p15p14g13,p15g14,g[15]);
+
+	and(p0Ic0,p0I,Cin);
+	or(carry[0],p0Ic0,g0I);
+	
+	and(p1Ip0Ic0,p1I,p0I,Cin);
+	and(p1Ig0I,p1I,g0I);
+	or(carry[1],p1Ip0Ic0,p1Ig0I,g1I);
+	
+	and(p2Ip1Ip0Ic0,p2I,p1I,p0I,Cin);
+	and(p2Ip1Ig0I,p2I,p1I,g0I);
+	and(p2Ig1I,p2I,g1I);
+	or(carry[2],p2Ip1Ip0Ic0,p2Ip1Ig0I,p2Ig1I,g2I);
+	
+	and(p3Ip2Ip1Ip0Ic0,p3I,p2I,p1I,p0I,Cin);
+	and(p3Ip2Ip1Ig0I,p3I,p2I,p1I,g0I);
+	and(p3Ip2Ig1I,p3I,p2I,g1I);
+	and(p3Ig2I,p3I,g2I);
+	or(carry[3],p3Ip2Ip1Ip0Ic0,p3Ip2Ip1Ig0I,p3Ip2Ig1I,p3Ig2I,g3I);
+	
+	wire carry2[3:0];
+	
+	CLA cla1(sum[3:0],carry2[0],A[3:0],B[3:0],Cin);
+	CLA cla2(sum[7:4],carry2[1],A[7:4],B[7:4],carry[0]);
+	CLA cla3(sum[11:8],carry2[2],A[11:8],B[11:8],carry[1]);
+	CLA cla4(sum[15:12],carry2[3],A[15:12],B[15:12],carry[2]);
+	
+	buf(c,carry[3]);
+
+endmodule
+	
+	
+	
