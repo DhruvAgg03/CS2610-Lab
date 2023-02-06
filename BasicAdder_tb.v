@@ -1,6 +1,6 @@
 `timescale 1ns/100ps
 
-module AdderModule_tb();
+module BasicAdder_tb();
 	reg a, b, carry_in;
 	wire half_carry, half_sum, full_carry, full_sum;
 
@@ -12,8 +12,8 @@ module AdderModule_tb();
 		b = 0;
 		carry_in = 0;
 
-		$dumpfile("AdderModule.vcd");
-		$dumpvars(0, AdderModule_tb);
+		$dumpfile("BasicAdder.vcd");
+		$dumpvars(0, BasicAdder_tb);
 
 		#80
 
