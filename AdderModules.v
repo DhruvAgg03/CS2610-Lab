@@ -12,7 +12,9 @@ module FullAdder(
 	output carry, sum,
 	input a, b, c
 );
-	HalfAdder h1(carry1_temp, sum_temp, a, b);
-	HalfAdder h2(carry2_temp, sum, sum_temp, c);
-	or #1 (carry, carry1_temp, carry2_temp);
+	xor #2 (sum, a, b, c);
+	and #1 (ab, a, b);
+	and #1 (bc, b, c);
+	and #1 (ca, c, a);
+	or #1 (carry, ab, bc, ca);
 endmodule

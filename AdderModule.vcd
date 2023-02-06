@@ -1,5 +1,5 @@
 $date
-	Mon Feb 06 13:14:04 2023
+	Mon Feb 06 13:23:12 2023
 $end
 $version
 	Icarus Verilog
@@ -17,25 +17,13 @@ $var reg 1 & b $end
 $var reg 1 ' carry_in $end
 $scope module __f $end
 $var wire 1 % a $end
+$var wire 1 ( ab $end
 $var wire 1 & b $end
+$var wire 1 ) bc $end
 $var wire 1 ' c $end
+$var wire 1 * ca $end
 $var wire 1 $ carry $end
-$var wire 1 ( sum_temp $end
 $var wire 1 # sum $end
-$var wire 1 ) carry2_temp $end
-$var wire 1 * carry1_temp $end
-$scope module h1 $end
-$var wire 1 % a $end
-$var wire 1 & b $end
-$var wire 1 * carry $end
-$var wire 1 ( sum $end
-$upscope $end
-$scope module h2 $end
-$var wire 1 ( a $end
-$var wire 1 ' b $end
-$var wire 1 ) carry $end
-$var wire 1 # sum $end
-$upscope $end
 $upscope $end
 $scope module __h $end
 $var wire 1 % a $end
@@ -63,70 +51,63 @@ x!
 $end
 #10
 0"
-0)
 0*
+0)
+0(
 #20
 0$
 0!
-0(
-#40
 0#
 #100
 1%
 #120
-1(
-1!
-#140
 1#
+1!
 #200
 0%
 1&
 #300
 1%
 #310
-1*
+1(
 1"
 #320
 1$
-0(
-0!
-#340
 0#
+0!
 #400
 0%
 0&
 1'
 #410
-0*
+0(
 0"
 #420
 0$
 1#
 #500
 1%
+#510
+1*
 #520
-1(
-1!
-#530
-1)
-#540
 1$
 0#
+1!
 #600
 0%
 1&
+#610
+0*
+1)
 #700
 1%
 #710
+1(
 1*
 1"
 #720
-0(
-0!
-#730
-0)
-#740
 1#
+0!
 #800
 0%
 0&
