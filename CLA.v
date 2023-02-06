@@ -5,16 +5,16 @@ module CLA(sum,carry,A,B);
 	input wire [3:0]B;
 	output wire[3:0]sum;
 	output carry;
-	
+
 	wire [3:0]p;
 	wire [3:0]g;
-	integer i;
-	and And[3:0](g,A,B);
-	xor Xor[3:0](p,A,B);
+	and And[3:0](g[3:0],A[3:0],B[3:0]);
+	xor Xor[3:0](p[3:0],A[3:0],B[3:0]);
+	
 	
 	wire[3:0]c;
 	
-	assign c[0] = 1'b0;
+	assign c[0] = 0;
 	and(p0c0,p[0],c[0]);
 	or(c[1],p0c0,g[0]);
 	
@@ -29,9 +29,11 @@ module CLA(sum,carry,A,B);
 	
 	and(p3p2p1p0c0,p[3],p[2],p[1],p[0],c[0]);
 	and(p3p2p1g0,p[3],p[2],p[1],g[0]);
-	and(p2p1g1,p[2],p[1],g[1]);
-	and(p2g2,p[2],g[2]);
-	or(carry,p3p2p1p0c0,p3p2p1g0,p2p1g1,p2g2,g[3]);
+	and(p3p2g1,p[3],p[2],g[1]);
+	and(p3g2,p[3],g[2]);
+	or(carry,p3p2p1p0c0,p3p2p1g0,p3p2g1,p3g2,g[3]);
+	
+	xor XOR[3:0](sum,p,c);
 	
 endmodule
 
