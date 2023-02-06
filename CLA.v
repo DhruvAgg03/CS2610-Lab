@@ -1,15 +1,11 @@
 `timescale 1ns/1ns
 
-module CLA(sum,carry,A,B,P,G);
+module CLA(sum,carry,A,B);
 	input wire [3:0]A;
 	input wire [3:0]B;
 	output wire[3:0]sum;
 	output carry;
-	output wire[3:0] P;
-	output wire[3:0]G;
-	
-	assign P = p;
-	assign G = g;
+
 	wire [3:0]p;
 	wire [3:0]g;
 	and And[3:0](g[3:0],A[3:0],B[3:0]);
