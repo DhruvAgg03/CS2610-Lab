@@ -101,11 +101,12 @@ module CLA16_higher(sum,c,A,B,Cin);
 	or(carry[3],p3Ip2Ip1Ip0Ic0,p3Ip2Ip1Ig0I,p3Ip2Ig1I,p3Ig2I,g3I);
 	
 	wire carry2[3:0];
+	wire carry2L[3:0];
 	
-	CLA cla1(sum[3:0],carry2[0],A[3:0],B[3:0],Cin);
-	CLA cla2(sum[7:4],carry2[1],A[7:4],B[7:4],carry[0]);
-	CLA cla3(sum[11:8],carry2[2],A[11:8],B[11:8],carry[1]);
-	CLA cla4(sum[15:12],carry2[3],A[15:12],B[15:12],carry[2]);
+	CLA cla1(sum[3:0],carry2[0],carry2L[0],A[3:0],B[3:0],Cin);
+	CLA cla2(sum[7:4],carry2[1],carry2L[0],A[7:4],B[7:4],carry[0]);
+	CLA cla3(sum[11:8],carry2[2],carry2L[0],A[11:8],B[11:8],carry[1]);
+	CLA cla4(sum[15:12],carry2[3],carry2L[0],A[15:12],B[15:12],carry[2]);
 	
 	buf(c,carry[3]);
 
