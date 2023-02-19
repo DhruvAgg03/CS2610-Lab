@@ -1,0 +1,249 @@
+$date
+	Mon Feb 20 01:23:36 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module Subtractor_tb $end
+$var wire 8 ! result [7:0] $end
+$var wire 1 " borrow $end
+$var reg 8 # A [7:0] $end
+$var reg 8 $ B [7:0] $end
+$var reg 1 % bin $end
+$scope module R $end
+$var wire 8 & X [7:0] $end
+$var wire 8 ' Y [7:0] $end
+$var wire 1 % bin $end
+$var wire 1 " borrow $end
+$var wire 9 ( intermediate_borrows [8:0] $end
+$var wire 8 ) ans [7:0] $end
+$scope module f[0] $end
+$var wire 1 * a $end
+$var wire 1 + abar $end
+$var wire 1 , abarbin $end
+$var wire 1 - b $end
+$var wire 1 . bbar $end
+$var wire 1 / bin $end
+$var wire 1 0 binb $end
+$var wire 1 1 binbar $end
+$var wire 1 2 bout $end
+$var wire 1 3 diff $end
+$var wire 1 4 g $end
+$var wire 1 5 p $end
+$upscope $end
+$scope module f[1] $end
+$var wire 1 6 a $end
+$var wire 1 7 abar $end
+$var wire 1 8 abarbin $end
+$var wire 1 9 b $end
+$var wire 1 : bbar $end
+$var wire 1 ; bin $end
+$var wire 1 < binb $end
+$var wire 1 = binbar $end
+$var wire 1 > bout $end
+$var wire 1 ? diff $end
+$var wire 1 @ g $end
+$var wire 1 A p $end
+$upscope $end
+$scope module f[2] $end
+$var wire 1 B a $end
+$var wire 1 C abar $end
+$var wire 1 D abarbin $end
+$var wire 1 E b $end
+$var wire 1 F bbar $end
+$var wire 1 G bin $end
+$var wire 1 H binb $end
+$var wire 1 I binbar $end
+$var wire 1 J bout $end
+$var wire 1 K diff $end
+$var wire 1 L g $end
+$var wire 1 M p $end
+$upscope $end
+$scope module f[3] $end
+$var wire 1 N a $end
+$var wire 1 O abar $end
+$var wire 1 P abarbin $end
+$var wire 1 Q b $end
+$var wire 1 R bbar $end
+$var wire 1 S bin $end
+$var wire 1 T binb $end
+$var wire 1 U binbar $end
+$var wire 1 V bout $end
+$var wire 1 W diff $end
+$var wire 1 X g $end
+$var wire 1 Y p $end
+$upscope $end
+$scope module f[4] $end
+$var wire 1 Z a $end
+$var wire 1 [ abar $end
+$var wire 1 \ abarbin $end
+$var wire 1 ] b $end
+$var wire 1 ^ bbar $end
+$var wire 1 _ bin $end
+$var wire 1 ` binb $end
+$var wire 1 a binbar $end
+$var wire 1 b bout $end
+$var wire 1 c diff $end
+$var wire 1 d g $end
+$var wire 1 e p $end
+$upscope $end
+$scope module f[5] $end
+$var wire 1 f a $end
+$var wire 1 g abar $end
+$var wire 1 h abarbin $end
+$var wire 1 i b $end
+$var wire 1 j bbar $end
+$var wire 1 k bin $end
+$var wire 1 l binb $end
+$var wire 1 m binbar $end
+$var wire 1 n bout $end
+$var wire 1 o diff $end
+$var wire 1 p g $end
+$var wire 1 q p $end
+$upscope $end
+$scope module f[6] $end
+$var wire 1 r a $end
+$var wire 1 s abar $end
+$var wire 1 t abarbin $end
+$var wire 1 u b $end
+$var wire 1 v bbar $end
+$var wire 1 w bin $end
+$var wire 1 x binb $end
+$var wire 1 y binbar $end
+$var wire 1 z bout $end
+$var wire 1 { diff $end
+$var wire 1 | g $end
+$var wire 1 } p $end
+$upscope $end
+$scope module f[7] $end
+$var wire 1 ~ a $end
+$var wire 1 !" abar $end
+$var wire 1 "" abarbin $end
+$var wire 1 #" b $end
+$var wire 1 $" bbar $end
+$var wire 1 %" bin $end
+$var wire 1 &" binb $end
+$var wire 1 '" binbar $end
+$var wire 1 (" bout $end
+$var wire 1 )" diff $end
+$var wire 1 *" g $end
+$var wire 1 +" p $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0+"
+0*"
+1)"
+0("
+1'"
+0&"
+0%"
+1$"
+0#"
+0""
+0!"
+1~
+0}
+0|
+1{
+0z
+1y
+0x
+0w
+1v
+0u
+0t
+0s
+1r
+0q
+0p
+0o
+0n
+0m
+0l
+1k
+1j
+0i
+0h
+0g
+1f
+1e
+1d
+0c
+1b
+0a
+1`
+1_
+0^
+1]
+1\
+1[
+0Z
+1Y
+0X
+1W
+1V
+0U
+1T
+1S
+0R
+1Q
+0P
+0O
+1N
+1M
+1L
+0K
+1J
+0I
+1H
+1G
+0F
+1E
+1D
+1C
+0B
+1A
+0@
+1?
+1>
+0=
+1<
+1;
+0:
+19
+08
+07
+16
+15
+14
+13
+12
+11
+00
+0/
+0.
+1-
+0,
+1+
+0*
+b11001011 )
+b111110 (
+b11111 '
+b11101010 &
+0%
+b11111 $
+b11101010 #
+0"
+b11001011 !
+$end
+#200

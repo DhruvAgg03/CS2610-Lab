@@ -9,12 +9,13 @@ module fullsubtractor (
     xor (diff, a, b, bin);
     not (abar, a);
     not (bbar, b);
-    not (binbar, borrowin);
+    not (binbar, bin);
     and (g, abar, b);
     and (abarbin, abar, bin);
     and (binb, bin, b);
-    or (binb, g, abarbin);
+    or (bout, binb, g, abarbin);
     or (p, abar, b);
+
 endmodule
 
 module RBS8bit (
