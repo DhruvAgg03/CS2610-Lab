@@ -1,6 +1,7 @@
 `timescale 1ns/100ps
 
 `include "Subtractor.v"
+`include "Multiplexer.v"
 
 module ExpDiff(
     output wire XeLTYe, 
