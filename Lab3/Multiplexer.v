@@ -1,3 +1,5 @@
+`ifndef MULTIPLEXER
+`define MULTIPLEXER
 `timescale 1ns/100ps
 
 module MUX (
@@ -29,3 +31,5 @@ module MUX8 (
     MUX4 m2(ans2, sel[1:0], in[7:4]);
     MUX m3(res, sel[2], ans1, ans2);
 endmodule
+
+`endif 

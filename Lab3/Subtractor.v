@@ -1,7 +1,9 @@
+`ifndef SUBTRACTOR
+`define SUBTRACTOR
 `timescale 1ns/100ps
 
 module fullsubtractor (
-    output wire diff, bout, /*p, g*/,
+    output wire diff, bout, /*p, g,*/
     input wire a, b, bin
 );
     xor (diff, a, b, bin);
@@ -23,7 +25,8 @@ module RBS8bit (
 );
     wire [8:0] intermediate_borrows;
     buf (intermediate_borrows[0], bin);
-    fullsubtractor f[7:0] (ans[7:0], borrow[8:1], X[7:0], Y[7:0], borrow[7:0]); 
+    fullsubtractor f[7:0] (ans[7:0], intermediate_borrows[8:1], X[7:0], Y[7:0], intermediate_borrows[7:0]); 
+    buf(borrow, intermediate_borrows[8]);
 endmodule
 
 
@@ -35,5 +38,20 @@ module RBS5bit (
 );
     wire [5:0] intermediate_borrows;
     buf (intermediate_borrows[0], bin);
-    fullsubtractor f[4:0] (ans[4:0], borrow[5:1], X[4:0], Y[4:0], borrow[4:0]); 
+    fullsubtractor f[4:0] (ans[4:0], intermediate_borrows[5:1], X[4:0], Y[4:0], intermediate_borrows[4:0]);
+    buf(borrow, intermediate_borrows[5]);
 endmodule
+
+module RBS4bit (
+    output wire [3:0] ans,
+    output wire borrow,
+    input wire [3:0] X, Y, 
+    input wire bin
+);
+    wire [4:0] intermediate_borrows;
+    buf (intermediate_borrows[0], bin);
+    fullsubtractor f[3:0] (ans[3:0], intermediate_borrows[4:1], X[3:0], Y[3:0], intermediate_borrows[3:0]); 
+    buf(borrow, intermediate_borrows[4]);
+endmodule
+
+`endif
