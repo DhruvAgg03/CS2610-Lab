@@ -6,7 +6,7 @@
 module ExpDiff(
     output wire XeLTYe, 
     output wire [3:0] XeminusYe,
-    input wire [3:0] Xe, Ye;
+    input wire [3:0] Xe, Ye
 );
     input wire [3:0] diff1, diff2;
 

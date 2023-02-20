@@ -13,8 +13,8 @@ module MantissaAdder(Sm, Pm, Qm, MAS);
     RCA8bit RC(sum[7:0], cout, Pm[7:0], Qm[7:0], zero);
     RBS8bit RB(diff[7:0], bout, Pm[7:0], Qm[7:0], zero);
 
-    sum[8] = cout;
-    diff[8] = zero;
+    buf b1(sum[8], cout);
+    buf b2(diff[8], zero);
 
     MUX m[8:0] (Sm[8:0], MAS, sum[8:0], diff[8:0]);
 

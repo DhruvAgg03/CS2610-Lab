@@ -24,4 +24,12 @@ module MantissaAlign(Xm, Ym, diff, LT, Pm, Qm);
     wire[7:0] t3;
     MUX m2[7:0] (t3[7:0], t2[7:0], t1[7:0], LT);
 
+    wire[7:0] t4;
+    BarrelShift BS (t4[7:0], t3[7:0], diff[2:0]);
+
+    wire[7:0] t5;
+    buf bb1[7:0] (t5[7:0], zero);
+
+    MUX m3[7:0] (Qm[7:0], diff[3], t5[7:0], t4[7:0]);
+
 endmodule
