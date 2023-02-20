@@ -1,0 +1,556 @@
+$date
+	Mon Feb 20 14:54:57 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module ExpDiffGen_tb $end
+$var wire 4 ! absDiff [3:0] $end
+$var wire 1 " XeLTYe $end
+$var reg 4 # Xe [3:0] $end
+$var reg 4 $ Ye [3:0] $end
+$scope module E $end
+$var wire 4 % Xe [3:0] $end
+$var wire 4 & Ye [3:0] $end
+$var wire 1 ' __low $end
+$var wire 1 ( low $end
+$var wire 1 ) temp $end
+$var wire 4 * diff2 [3:0] $end
+$var wire 4 + diff1 [3:0] $end
+$var wire 4 , XeminusYe [3:0] $end
+$var wire 1 " XeLTYe $end
+$scope module m[0] $end
+$var wire 1 - res $end
+$var wire 1 . s0 $end
+$var wire 1 / s1 $end
+$var wire 1 0 selbar $end
+$var wire 1 1 t0 $end
+$var wire 1 2 t1 $end
+$var wire 1 " sel $end
+$upscope $end
+$scope module m[1] $end
+$var wire 1 3 res $end
+$var wire 1 4 s0 $end
+$var wire 1 5 s1 $end
+$var wire 1 6 selbar $end
+$var wire 1 7 t0 $end
+$var wire 1 8 t1 $end
+$var wire 1 " sel $end
+$upscope $end
+$scope module m[2] $end
+$var wire 1 9 res $end
+$var wire 1 : s0 $end
+$var wire 1 ; s1 $end
+$var wire 1 < selbar $end
+$var wire 1 = t0 $end
+$var wire 1 > t1 $end
+$var wire 1 " sel $end
+$upscope $end
+$scope module m[3] $end
+$var wire 1 ? res $end
+$var wire 1 @ s0 $end
+$var wire 1 A s1 $end
+$var wire 1 B selbar $end
+$var wire 1 C t0 $end
+$var wire 1 D t1 $end
+$var wire 1 " sel $end
+$upscope $end
+$scope module r1 $end
+$var wire 4 E X [3:0] $end
+$var wire 4 F Y [3:0] $end
+$var wire 1 ( bin $end
+$var wire 1 " borrow $end
+$var wire 5 G intermediate_borrows [4:0] $end
+$var wire 4 H ans [3:0] $end
+$scope module f[0] $end
+$var wire 1 I a $end
+$var wire 1 J abar $end
+$var wire 1 K abarbin $end
+$var wire 1 L b $end
+$var wire 1 M bbar $end
+$var wire 1 N bin $end
+$var wire 1 O binb $end
+$var wire 1 P binbar $end
+$var wire 1 Q bout $end
+$var wire 1 R diff $end
+$var wire 1 S g $end
+$var wire 1 T p $end
+$upscope $end
+$scope module f[1] $end
+$var wire 1 U a $end
+$var wire 1 V abar $end
+$var wire 1 W abarbin $end
+$var wire 1 X b $end
+$var wire 1 Y bbar $end
+$var wire 1 Z bin $end
+$var wire 1 [ binb $end
+$var wire 1 \ binbar $end
+$var wire 1 ] bout $end
+$var wire 1 ^ diff $end
+$var wire 1 _ g $end
+$var wire 1 ` p $end
+$upscope $end
+$scope module f[2] $end
+$var wire 1 a a $end
+$var wire 1 b abar $end
+$var wire 1 c abarbin $end
+$var wire 1 d b $end
+$var wire 1 e bbar $end
+$var wire 1 f bin $end
+$var wire 1 g binb $end
+$var wire 1 h binbar $end
+$var wire 1 i bout $end
+$var wire 1 j diff $end
+$var wire 1 k g $end
+$var wire 1 l p $end
+$upscope $end
+$scope module f[3] $end
+$var wire 1 m a $end
+$var wire 1 n abar $end
+$var wire 1 o abarbin $end
+$var wire 1 p b $end
+$var wire 1 q bbar $end
+$var wire 1 r bin $end
+$var wire 1 s binb $end
+$var wire 1 t binbar $end
+$var wire 1 u bout $end
+$var wire 1 v diff $end
+$var wire 1 w g $end
+$var wire 1 x p $end
+$upscope $end
+$upscope $end
+$scope module r2 $end
+$var wire 4 y X [3:0] $end
+$var wire 4 z Y [3:0] $end
+$var wire 1 ( bin $end
+$var wire 1 ) borrow $end
+$var wire 5 { intermediate_borrows [4:0] $end
+$var wire 4 | ans [3:0] $end
+$scope module f[0] $end
+$var wire 1 } a $end
+$var wire 1 ~ abar $end
+$var wire 1 !" abarbin $end
+$var wire 1 "" b $end
+$var wire 1 #" bbar $end
+$var wire 1 $" bin $end
+$var wire 1 %" binb $end
+$var wire 1 &" binbar $end
+$var wire 1 '" bout $end
+$var wire 1 (" diff $end
+$var wire 1 )" g $end
+$var wire 1 *" p $end
+$upscope $end
+$scope module f[1] $end
+$var wire 1 +" a $end
+$var wire 1 ," abar $end
+$var wire 1 -" abarbin $end
+$var wire 1 ." b $end
+$var wire 1 /" bbar $end
+$var wire 1 0" bin $end
+$var wire 1 1" binb $end
+$var wire 1 2" binbar $end
+$var wire 1 3" bout $end
+$var wire 1 4" diff $end
+$var wire 1 5" g $end
+$var wire 1 6" p $end
+$upscope $end
+$scope module f[2] $end
+$var wire 1 7" a $end
+$var wire 1 8" abar $end
+$var wire 1 9" abarbin $end
+$var wire 1 :" b $end
+$var wire 1 ;" bbar $end
+$var wire 1 <" bin $end
+$var wire 1 =" binb $end
+$var wire 1 >" binbar $end
+$var wire 1 ?" bout $end
+$var wire 1 @" diff $end
+$var wire 1 A" g $end
+$var wire 1 B" p $end
+$upscope $end
+$scope module f[3] $end
+$var wire 1 C" a $end
+$var wire 1 D" abar $end
+$var wire 1 E" abarbin $end
+$var wire 1 F" b $end
+$var wire 1 G" bbar $end
+$var wire 1 H" bin $end
+$var wire 1 I" binb $end
+$var wire 1 J" binbar $end
+$var wire 1 K" bout $end
+$var wire 1 L" diff $end
+$var wire 1 M" g $end
+$var wire 1 N" p $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1N"
+0M"
+1L"
+1K"
+0J"
+1I"
+1H"
+0G"
+1F"
+0E"
+0D"
+1C"
+1B"
+1A"
+0@"
+1?"
+0>"
+1="
+1<"
+0;"
+1:"
+19"
+18"
+07"
+16"
+15"
+04"
+13"
+02"
+11"
+10"
+0/"
+1."
+1-"
+1,"
+0+"
+1*"
+1)"
+1("
+1'"
+1&"
+0%"
+0$"
+0#"
+1""
+0!"
+1~
+0}
+b1001 |
+b11110 {
+b1111 z
+b1000 y
+1x
+0w
+0v
+0u
+1t
+0s
+0r
+0q
+1p
+0o
+0n
+1m
+0l
+0k
+1j
+0i
+1h
+0g
+0f
+1e
+0d
+0c
+0b
+1a
+0`
+0_
+1^
+0]
+1\
+0[
+0Z
+1Y
+0X
+0W
+0V
+1U
+0T
+0S
+1R
+0Q
+1P
+0O
+0N
+1M
+0L
+0K
+0J
+1I
+b111 H
+b0 G
+b1000 F
+b1111 E
+0D
+0C
+1B
+1A
+0@
+0?
+0>
+1=
+1<
+0;
+1:
+19
+08
+17
+16
+05
+14
+13
+02
+11
+10
+1/
+1.
+1-
+b111 ,
+b111 +
+b1001 *
+1)
+0(
+0'
+b1000 &
+b1111 %
+b1000 $
+b1111 #
+0"
+b111 !
+$end
+#200
+09
+1?
+b1001 !
+b1001 ,
+03
+0=
+1C
+07
+0:
+1@
+1;
+0A"
+09"
+0A
+1M"
+1E"
+04
+1`
+15
+0j
+0e
+1l
+1v
+1q
+0x
+1@"
+08"
+0L"
+1D"
+b1001 +
+b1001 H
+0^
+1V
+b111 *
+b111 |
+14"
+1/"
+05"
+01"
+1d
+0p
+17"
+0C"
+0U
+0."
+b100 $
+b100 &
+b100 F
+b100 y
+b1101 #
+b1101 %
+b1101 E
+b1101 z
+#400
+18
+0?
+0C
+12"
+0-"
+0B
+0<
+06
+00
+00"
+0)
+0-
+09
+1"
+b10 !
+b10 ,
+13
+01
+0=
+0'"
+b1100 {
+0K"
+07
+0.
+1:
+b10000 G
+1u
+0/
+0)"
+0;
+1A"
+19"
+0E"
+0N"
+14
+0`
+15
+0R
+0M
+1T
+1j
+1e
+0l
+0q
+1w
+1x
+0("
+0~
+0@"
+18"
+0D"
+b1110 +
+b1110 H
+1^
+0V
+1n
+b10 *
+b10 |
+14"
+0/"
+15"
+01"
+1G"
+0M"
+0I"
+1L
+0d
+1p
+1}
+07"
+1C"
+1U
+0m
+1."
+0F"
+b1001 $
+b1001 &
+b1001 F
+b1001 y
+b111 #
+b111 %
+b111 E
+b111 z
+#600
+1?
+1D
+b1110 !
+b1110 ,
+19
+1A
+1>
+0:
+0@
+1L"
+1J"
+1;
+0j
+0h
+1c
+1g
+b10 +
+b10 H
+0v
+0t
+1o
+1s
+0H"
+b1110 *
+b1110 |
+1@"
+1>"
+1f
+1r
+0<"
+0?"
+1]
+b11100 G
+1i
+06"
+09"
+0B"
+b0 {
+03"
+1M
+0Y
+1_
+1`
+0e
+1k
+1l
+1~
+0,"
+08"
+1J
+1V
+1b
+1#"
+1*"
+1/"
+05"
+1;"
+0A"
+0="
+0L
+1X
+1d
+0}
+1+"
+17"
+0I
+0U
+0a
+0""
+0."
+0:"
+b1110 $
+b1110 &
+b1110 F
+b1110 y
+b0 #
+b0 %
+b0 E
+b0 z
+#800

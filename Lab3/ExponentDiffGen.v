@@ -16,6 +16,6 @@ module ExpDiff(
     RBS4bit r1 (diff1, XeLTYe, Xe, Ye, low);
     RBS4bit r2 (diff2, temp, Ye, Xe, low);
 
-    MUX m [3:0] (XeminusYe, Xe, Ye, XeLTYe);
+    MUX m [3:0] (XeminusYe, XeLTYe, diff1, diff2);
 endmodule
 
