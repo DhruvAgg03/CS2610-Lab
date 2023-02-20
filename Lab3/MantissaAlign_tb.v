@@ -11,15 +11,15 @@ module MantissaAlign_tb();
 	
 	initial begin
 		
-		Xm = 7'b11101010;
-        Ym = 7'b01011111;
+		Xm = 7'b1110101;
+        Ym = 7'b0101111;
         diff = 4'b0010;
         LT = 1'b0;
 		$dumpfile("MantissaAlign_tb.vcd");
 		$dumpvars(0, MantissaAlign_tb);
 
         #20
-        $display("Xm = %b, Ym = %b, diff = %b, LT = %b, Pm = %b, Qm = %b", Xm, Ym, diff, result, borrow);
+        $display("Xm = %b, Ym = %b, diff = %b, LT = %b, Pm = %b, Qm = %b", Xm, Ym, diff, LT, Pm, Qm);
 		
 	end
 
