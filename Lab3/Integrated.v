@@ -25,7 +25,7 @@ module integrated(
   MantissaAlign AlignMantissas(x[6:0],y[6:0],XeminusYe,XeLTYe,Pm,Qm);
 
   wire[8:0] Sm;
-  MantissaAdder MA(Pm,Qm,MAS,Sm);
+  MantissaAdder MA(Sm,Pm,Qm,MAS);
 
   NormandExpGen Final(result[10:7],result[6:0],XeLTYe,x[10:7],y[10:7],Sm);
 

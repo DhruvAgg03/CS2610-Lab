@@ -21,7 +21,7 @@ module FullAdder(
 	or (carry, ab, bc, ca);
 endmodule
 
-module RCA8bit (
+module RCA4bit (
 	output wire [3:0] ans,
 	output wire cout,
 	input wire [3:0] A, B,
@@ -31,5 +31,17 @@ module RCA8bit (
 	buf (intermediate_carry[0], cin);
 	FullAdder f[3:0] (intermediate_carry[4:1], ans, A, B, intermediate_carry[3:0]);
 	buf (cout, intermediate_carry[4]);
+endmodule
+
+module RCA8bit (
+	output wire [7:0] ans,
+	output wire cout,
+	input wire [7:0] A, B,
+	input wire cin
+);
+	wire [8:0] intermediate_carry;
+	buf (intermediate_carry[0], cin);
+	FullAdder f[7:0] (intermediate_carry[8:1], ans, A, B, intermediate_carry[7:0]);
+	buf (cout, intermediate_carry[8]);
 endmodule
 `endif
