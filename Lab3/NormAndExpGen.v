@@ -21,5 +21,5 @@ module NormandExpGen (
     wire [2:0] LDZshift;
     wire [7:0] BarrelOut;
     PEncoder P (sum[7:0], LDZshift);
-    BarrelShift BB
+    BarrelShift BB 
 endmodule
