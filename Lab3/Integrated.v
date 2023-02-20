@@ -15,19 +15,19 @@ module integrated(
 
   wire XeLTYe;
   wire [3:0] XeminusYe;
-  ExpDiff DifferenceExponent(XeLTYe,XeminusYe,x[5:1],y[5:1]);
+  ExpDiff DifferenceExponent(XeLTYe,XeminusYe,x[10:7],y[10:7]);
 
   wire Zs,MAS;
-  ZandMASgen GenerateZMAS(result[0],MAS,XeLTYe,x[0],y[0],sub);
+  ZandMASgen GenerateZMAS(result[11],MAS,XeLTYe,x[11],y[11],sub);
 
   wire[7:0]Pm;
   wire[7:0]Qm;
-  MantissaAlign AlignMantissas(x[11:5],y[11:5],XeminusYe,XeLTYe,Pm,Qm);
+  MantissaAlign AlignMantissas(x[6:0],y[6:0],XeminusYe,XeLTYe,Pm,Qm);
 
   wire[8:0] Sm;
   MantissaAdder MA(Pm,Qm,MAS,Sm);
 
-  NormandExpGen Final(result[4:1],result[11:5],XeLTYe,x[4:1],y[4:1],Sm);
+  NormandExpGen Final(result[10:7],result[6:0],XeLTYe,x[10:7],y[10:7],Sm);
 
 endmodule
   
