@@ -1,3 +1,11 @@
+`timescale 1ns/100ps
+
+`include "ZandMASGenerator.v"
+`include "ExponentDiffGen.v"
+`include "MantissaAlign.v"
+`include "MantissaAdder.v"
+`include "NormandExpGen.v"
+
 module integrated(
   input wire[11:0] x,
   input wire[11:0] y,

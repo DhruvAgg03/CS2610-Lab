@@ -1,3 +1,5 @@
+`ifndef ADDER
+`define ADDER
 `timescale 1ns/100ps
 
 module HalfAdder(
@@ -30,3 +32,4 @@ module RCA8bit (
 	FullAdder f[3:0] (intermediate_carry[4:1], ans, A, B, intermediate_carry[3:0]);
 	buf (cout, intermediate_carry[4]);
 endmodule
+`endif

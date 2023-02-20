@@ -1,6 +1,9 @@
 `timescale 1ns/100ps
 `include "Multiplexer.v"
 `include "Subtractor.v"
+`include "pEncoder.v"
+`include "BarrelShift.v"
+`include "BasicAdder.v"
 
 module NormandExpGen (
     output wire [3:0] Ze,
@@ -21,5 +24,10 @@ module NormandExpGen (
     wire [2:0] LDZshift;
     wire [7:0] BarrelOut;
     PEncoder P (sum[7:0], LDZshift);
-    BarrelShift BB
+
+    BarrelShift BB(BarrelOut, sum[7:0], LDZshift);
+
+    MUX mm [6:0] (Zm, sum[8], BarrelOut[6:0], sum[6:0]);
+
+    RBS4bit RR (ans, temp_borrow, Ge, LDZshift);
 endmodule
