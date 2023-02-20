@@ -15,12 +15,12 @@ module Integrated_tb();
         sub = 1'b0;
 
         //Case 1 : Sum of aligned mantissas greater than 2.0
-		x = 12'b010111100000;
-        y = 12'b010111000000;
+		x = 12'b010111000000;
+        y = 12'b010101000000;
 
         #20
-        $display("x = %b, y = %b, result = %b", x, y, result);
-        $display("Ans should be 011001010000");
+        $display("x = %b, y = %b\n       result = %b", x, y, result);
+        $display("Ans should be 011000010000\n");
 
         //Case 2 : Sum of aligned mantissas greater than 2.0
 		x = 12'b010111100000;
@@ -28,7 +28,7 @@ module Integrated_tb();
 
         #20
         $display("x = %b, y = %b, result = %b", x, y, result);
-        $display("Ans should be ");
+        $display("Ans should be \n");
 
         //Case 3 : Sum of aligned mantissas less than 2.0
 		x = 12'b010111100000;
@@ -36,7 +36,7 @@ module Integrated_tb();
 
         #20
         $display("x = %b, y = %b, result = %b", x, y, result);
-        $display("Ans should be ");
+        $display("Ans should be \n");
 
         //Case 4 : Sum of aligned mantissas less than 2.0
 		x = 12'b010111100000;
@@ -44,7 +44,7 @@ module Integrated_tb();
 
         #20
         $display("x = %b, y = %b, result = %b", x, y, result);
-        $display("Ans should be ");
+        $display("Ans should be \n");
 
         //Case 5 : Xe - Ye < 8
 		x = 12'b010111100000;
@@ -52,7 +52,7 @@ module Integrated_tb();
 
         #20
         $display("x = %b, y = %b, result = %b", x, y, result);
-        $display("Ans should be ");
+        $display("Ans should be \n");
 
         //Case 6 : Xe - Ye >= 8
 		x = 12'b010111100000;
@@ -60,7 +60,7 @@ module Integrated_tb();
 
         #20
         $display("x = %b, y = %b, result = %b", x, y, result);
-        $display("Ans should be ");
+        $display("Ans should be \n");
 
 		
 	end
