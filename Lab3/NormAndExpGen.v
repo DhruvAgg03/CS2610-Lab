@@ -21,9 +21,5 @@ module NormandExpGen (
     wire [2:0] LDZshift;
     wire [7:0] BarrelOut;
     PEncoder P (sum[7:0], LDZshift);
-    BarrelShift BBB(BarrelOut, sum[7:0], LDZshift);
-
-    MUX mr [6:0] (Zm, sum[8], BarrelOut[6:0], sum[6:0]);
-
-    RBS4bit BB (ans, temp_borrow, Ge, LDZshift);
+    BarrelShift BB
 endmodule
