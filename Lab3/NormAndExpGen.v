@@ -19,7 +19,7 @@ module NormandExpGen (
     supply0 __low;
     // buf (high, __high);
     buf (low, __low);
-    // RCA8bit r (GePlus, temp_cout, Ge, low, high);
+    RCA8bit r (GePlus, temp_cout, Ge, low, sum[8]);
 
     wire [3:0] LDZshift;
     buf (LDZshift[3], low);
