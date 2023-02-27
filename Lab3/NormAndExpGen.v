@@ -24,13 +24,15 @@ module NormandExpGen (
     RCA4bit r (GePlus, temp_cout, Ge, all_low, sum[8]);
 
     wire [3:0] LDZshift;
-    buf (LDZshift[3], low);
+    buf low__ [3:0] (LDZshift[3:0], low);
     wire [7:0] BarrelOut;
-    PEncoder P (sum[7:0], LDZshift[2:0]);
+    // PEncoder P (sum[7:0], LDZshift[2:0]);
 
     BarrelShift BB(BarrelOut, sum[7:0], LDZshift[2:0]);
 
     MUX mm [6:0] (Zm, sum[8], BarrelOut[6:0], sum[7:1]);
 
-    RBS4bit RR (Ze, temp_borrow, Ge, LDZshift, low);
+    wire [3:0] Ze_temp;
+    RBS4bit RR (Ze_temp, temp_borrow, Ge, LDZshift, low);
+    MUX mm2 [3:0] (Ze, sum[8], Ze_temp, GePlus);
 endmodule
