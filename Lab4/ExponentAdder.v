@@ -30,7 +30,9 @@ module ExpAdder (
 
     buf bb[3:0] (Ze, tempZe[3:0]);
     
-    // generating overflow (when answer is negative, answer is zero or answer is greater than 4 bits)
-    and (subnormal, tempZe[0], tempZe[1], tempZe[2], tempZe[3]);
-    or (overflow, borrow_out, tempZe[4], subnormal);
+    // generating overflow (when answer is negative, answer is zero or answer is greater than or equal to 15)
+    or (notsubnormal, tempZe[0], tempZe[1], tempZe[2], tempZe[3]);
+    not (subnormal, notsubnormal);
+    buf (infinityorNaN, notsubnormal);
+    or (overflow, borrow_out, tempZe[4], subnormal, infinityorNaN);
 endmodule
