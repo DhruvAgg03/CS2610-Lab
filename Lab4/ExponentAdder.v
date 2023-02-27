@@ -5,6 +5,7 @@
 
 module ExpAdder (
     output wire [3:0] Ze,
+    output wire overflow,
     input wire [3:0] Xe, Ye,
     input wire PM15
 );
@@ -28,4 +29,6 @@ module ExpAdder (
     RBS5bit sub1 (tempZe, borrow_out, intermediate_sum[4:0], bias[4:0], low);
 
     buf bb[3:0] (Ze, tempZe[3:0]);
+    
+    or (overflow, borrow_out, tempZe[4]);
 endmodule
