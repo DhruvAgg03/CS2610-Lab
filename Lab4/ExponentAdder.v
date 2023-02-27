@@ -18,11 +18,11 @@ module ExpAdder (
     
     // subtracting bias
     wire [4:0] bias;
-    buf (low, bias[4]);
-    buf (low, bias[3]);
-    buf (high, bias[2]);
-    buf (high, bias[1]);
-    buf (high, bias[0]);
+    buf (bias[4], low);
+    buf (bias[3], low);
+    buf (bias[2], high);
+    buf (bias[1], high);
+    buf (bias[0], high);
 
     // generating Ze
     wire [4:0] tempZe;
@@ -30,5 +30,7 @@ module ExpAdder (
 
     buf bb[3:0] (Ze, tempZe[3:0]);
     
-    or (overflow, borrow_out, tempZe[4]);
+    // generating overflow (when answer is negative, answer is zero or answer is greater than 4 bits)
+    and (subnormal, tempZe[0], tempZe[1], tempZe[2], tempZe[3]);
+    or (overflow, borrow_out, tempZe[4], subnormal);
 endmodule
