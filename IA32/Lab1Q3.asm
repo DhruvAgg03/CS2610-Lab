@@ -1,0 +1,51 @@
+section .data
+op: DD 0x2A
+Z: DD 7
+X: DD 4
+Y: DD 8
+
+section .text
+MOV EBX, [op]
+MOV EAX, [X]
+CMP EBX, 0x2B   ; +
+JNE LAB1
+ADD EAX, [Y]
+MOV [Z], EAX
+JMP END
+
+LAB1:
+CMP EBX, 0x2D   ; -
+JNE LAB2
+SUB EAX, [Y]
+MOV [Z], EAX
+JMP END
+
+LAB2:
+CMP EBX, 0x2A   ; *
+JNE LAB3
+IMUL [Y]
+MOV [Z], EAX
+JMP END
+
+LAB3:
+CMP EBX, 0x2F    ; /
+JNE LAB4
+IDIV [Y]
+MOV [Z], EAX
+JMP END
+
+LAB4:
+CMP EBX, 0x25       ; %
+JNE DEFAULT
+IDIV [Y]
+IMUL [Y]
+MOV ECX, [X]
+SUB ECX, EAX
+MOV [Z], ECX
+JMP END
+
+DEFAULT:
+MOV [Z], 0x00
+
+END:
+HLT
