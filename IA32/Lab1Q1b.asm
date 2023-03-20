@@ -1,20 +1,20 @@
 section .data
 P: 
-DD 1
+DD -2
 Q: 
-DD 2
+DD 6
 R: 
 DD 4
 S: 
-DD 3
-T:
 DD 5
+T:
+DD 8
 U: 
-DD 7
+DD 3
 V: 
 DD 2
 W:
-DD 3
+DD 6
 Z:
 DD 12
     
