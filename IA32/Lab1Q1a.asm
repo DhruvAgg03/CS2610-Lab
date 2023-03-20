@@ -28,9 +28,9 @@ section .text
     MOV EAX,[V]
     MOV ECX,[W]
     IMUL ECX
-    MOV ECX,[U]
-    SUB ECX,EAX
+    SUB EBX,EAX
     MOV EAX,[T]
+    MOV ECX,[U]
     IDIV ECX
     ADD EAX,EBX
     MOV [Z],EAX
