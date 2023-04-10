@@ -1,7 +1,10 @@
 section .data
 
-record:
+record1:
     db -12,-23,4,3,54,19,-34,67,12
+
+record2:
+    db -45, 12,23,17,19,80,-10
 
 section .text
     MOV EAX ,0
@@ -13,6 +16,15 @@ section .text
     POP EAX
     POP EAX
     POP EAX
+    MOV EBX, 9
+    MOV ECX, 7
+    SUB ESP,4
+    PUSH ECX
+    PUSH EBX
+    CALL square_norm
+    POP EBX
+    POP EBX
+    POP EBX
     HLT
 
 square_norm:
@@ -26,9 +38,9 @@ square_norm:
     MOV EBX, 0 ; store final value here
     ADD ESP, 32
     MOV EDI, [ESP] ;d
-    ADD ESP, 4
+    SUB ESP, 4
     MOV ECX, [ESP] ; X
-    SUB ESP, 36
+    SUB ESP, 28
     MOV ESI , 0
 
 .loop: 
