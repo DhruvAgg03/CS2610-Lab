@@ -172,11 +172,11 @@ module CLA16_higher(sum,overF,A,B,sub,sign);
     and And2 (mint2, sign, o2);
 
     or Or (overF, mint1, mint2);
-    and And1 (mint1, sign_bar, o1);
-    and And2 (mint2, sign,  o2);
+    and AAnd1 (mint1, sign_bar, o1);
+    and AAnd2 (mint2, sign,  o2);
 
-    or Or (overF, mint1, mint2);
-    or Or (OF, mint1, mint2);
+    or OOOr (overF, mint1, mint2);
+    or OOr (OF, mint1, mint2);
 
 endmodule
 	

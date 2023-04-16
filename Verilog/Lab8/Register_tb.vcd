@@ -1,0 +1,91 @@
+$date
+	Mon Apr 17 01:04:57 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module Register_tb $end
+$var wire 12 ! readData2 [11:0] $end
+$var wire 12 " readData1 [11:0] $end
+$var reg 1 # clk $end
+$var reg 3 $ read1Addr [2:0] $end
+$var reg 3 % read2Addr [2:0] $end
+$var reg 3 & writeAddr [2:0] $end
+$var reg 12 ' writeData [11:0] $end
+$scope module r $end
+$var wire 1 # clk $end
+$var wire 3 ( read1Addr [2:0] $end
+$var wire 3 ) read2Addr [2:0] $end
+$var wire 12 * readData1 [11:0] $end
+$var wire 12 + readData2 [11:0] $end
+$var wire 3 , writeAddr [2:0] $end
+$var wire 12 - writeData [11:0] $end
+$var reg 12 . tempReadData1 [11:0] $end
+$var reg 12 / tempReadData2 [11:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx /
+bx .
+b10 -
+b10 ,
+bx +
+bx *
+b1 )
+b0 (
+b10 '
+b10 &
+b1 %
+b0 $
+0#
+bx "
+bx !
+$end
+#20
+b0xxxxxxxx !
+b0xxxxxxxx +
+b0xxxxxxxx /
+b0xxxxxxxx "
+b0xxxxxxxx *
+b0xxxxxxxx .
+1#
+#40
+b0 '
+b0 -
+b0 &
+b0 ,
+b10 $
+b10 (
+0#
+#60
+b10 "
+b10 *
+b10 .
+1#
+#80
+b1 '
+b1 -
+b1 &
+b1 ,
+b10 %
+b10 )
+b0 $
+b0 (
+0#
+#100
+b10 !
+b10 +
+b10 /
+b0 "
+b0 *
+b0 .
+1#
+#120

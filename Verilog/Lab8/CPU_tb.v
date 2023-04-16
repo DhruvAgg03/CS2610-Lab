@@ -39,5 +39,6 @@ module CPU_tb();
 		instruction = 12'b111010001000;
 		
 		#20
+		$finish;
 	end
 endmodule
