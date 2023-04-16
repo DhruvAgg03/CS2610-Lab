@@ -14,8 +14,9 @@ module Registers (
         begin
             myreg[0] = 30;
             myreg[1] = 40;
-            myreg[5] = 2;
-            myreg[6] = 3;
+            myreg[5] = 12'b010111000000;
+            myreg[6] = 12'b001111000000;
+            // 010111001100 is the result
         end
     reg [11:0] tempReadData1;
     reg [11:0] tempReadData2;

@@ -14,10 +14,8 @@ module CPU(
     wire [11:0] readData2;
     Registers r(clk, read1Addr, read2Addr, writeAddr, writeData, readData1, readData2);
     wire [2:0] opcode = instruction[11:9];
-    reg [11:0] operand1;
-    reg [11:0] operand2;
     wire [11:0] result;
-    ALU a(opcode, operand1, operand2, result);
+    ALU a(opcode, readData1, readData2, result);
     always @(instruction)
         begin
             clk = 0;
@@ -27,8 +25,8 @@ module CPU(
             // #1
             clk = 1;
             // #1
-            operand1 = readData1;
-            operand2 = readData2;
+            // operand1 = readData1;
+            // operand2 = readData2;
             // #1
             writeData = result;
             // #1
