@@ -19,7 +19,7 @@ module ALU_tb();
         B = 12'b000010110110;
 
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 000110010101\n");
 
         //Case 2: Subtraction
@@ -27,7 +27,7 @@ module ALU_tb();
         A = 12'b000011011111;
         B = 12'b000010110110;
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 000000101001\n"); 
 
         //Case 3: Unsigned Multiplication
@@ -35,7 +35,7 @@ module ALU_tb();
         A = 12'b000000000111;
         B = 12'b000000000101;
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 000000100011\n");
 
         //Case 4: Signed Multiplication
@@ -43,7 +43,7 @@ module ALU_tb();
         A = 12'b000000000111;
         B = 12'b111111111011;
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 111111011101\n");
 
         //Case 5: Floating Point Addition
@@ -51,7 +51,7 @@ module ALU_tb();
         A = 12'b010011000000;
         B = 12'b010001000000;
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 010100010000\n");
 
         //Case 6: Floating Point Multiplication
@@ -59,7 +59,7 @@ module ALU_tb();
         A = 12'b000101100000;
         B = 12'b110011000000;
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 101010101000\n"); 
 
         //Case 7: Comparator
@@ -67,7 +67,7 @@ module ALU_tb();
         A = 12'b000101100000;
         B = 12'b000101100000;
         #20
-        $display("A = %b, B = %b\n     result = %b" A, B, result);
+        $display("A = %b, B = %b\n     result = %b", A, B, result);
         $display("Ans should be 000000000000\n");
 		
 	end
