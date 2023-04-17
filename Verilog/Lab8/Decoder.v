@@ -1,3 +1,5 @@
+`ifndef DECODER
+`define DECODER
 module Decoder(
 	input [2:0] inp,
 	output [7:0] result
@@ -16,3 +18,4 @@ module Decoder(
     and a7(result[7], inp[2], inp[1], inp[0]);
 
 endmodule
+`endif 

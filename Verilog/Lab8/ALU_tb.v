@@ -20,7 +20,7 @@ module ALU_tb();
 
         #20
         $display("A = %b, B = %b\n     result = %b", A, B, result);
-        $display("Ans should be 000110010101\n");
+        $display("Ans should be 000010010101\n");
 
         //Case 2: Subtraction
         opcode = 010;
@@ -44,15 +44,15 @@ module ALU_tb();
         B = 12'b111111111011;
         #20
         $display("A = %b, B = %b\n     result = %b", A, B, result);
-        $display("Ans should be 111111011101\n");
+        $display("Ans should be 000011011101\n");
 
         //Case 5: Floating Point Addition
         opcode = 101;
-        A = 12'b010011000000;
-        B = 12'b010001000000;
+        A = 12'b010111000000;
+        B = 12'b001111000000;
         #20
         $display("A = %b, B = %b\n     result = %b", A, B, result);
-        $display("Ans should be 010100010000\n");
+        $display("Ans should be 010111001100\n");
 
         //Case 6: Floating Point Multiplication
         opcode = 110;
