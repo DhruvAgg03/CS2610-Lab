@@ -5,9 +5,27 @@
 `include "FPAdder.v"
 `include "FPMultiplier.v"
 `include "Comparator.v"
-`include "Decoder.v"
 
 `timescale 1ns/100ps
+
+module Decoder(
+	input [2:0] inp,
+	output [7:0] result
+	);
+
+    wire[2:0] inpBar;
+    not n[2:0] (inpBar, inp);
+
+    and a0(result[0], inpBar[2], inpBar[1], inpBar[0]);
+    and a1(result[1], inpBar[2], inpBar[1], inp[0]);
+    and a2(result[2], inpBar[2], inp[1], inpBar[0]);
+    and a3(result[3], inpBar[2], inp[1], inp[0]);
+    and a4(result[4], inp[2], inpBar[1], inpBar[0]);
+    and a5(result[5], inp[2], inpBar[1], inp[0]);
+    and a6(result[6], inp[2], inp[1], inpBar[0]);
+    and a7(result[7], inp[2], inp[1], inp[0]);
+
+endmodule
 
 module ALU
 (
@@ -41,11 +59,11 @@ module ALU
 	buf(low,__low);
 	wire carry;
 	RCA8bit ADD(Addition[7:0],carry, operand1[7:0], operand2[7:0], low);
-	buf B1[3:0](Addition[11:8], __low);
+	buf B1[3:0](Addition[11:8],Addition[7]);
 	
 	wire borrow;
 	RBS8bit SUB(Subtraction[7:0],borrow,operand1[7:0], operand2[7:0], low);
-	buf B2[3:0](Subtraction[11:8], __low);
+	buf B2[3:0](Subtraction[11:8], Subtraction[7]);
 	
 	wire ovflow1;
 	CSA_unsigned SMultiplier(operand1[7:0], operand2[7:0], UnsignedMultiplication[7:0], ovflow1);
@@ -53,9 +71,9 @@ module ALU
 	
 	wire ovflow2;
 	CSA_signed USMultiplier(operand1[7:0], operand2[7:0], SignedMultiplication[7:0], ovflow2);
-	buf B4[3:0](SignedMultiplication[11:8], __low);
+	buf B4[3:0](SignedMultiplication[11:8], SignedMultiplication[7]);
 	
-	FPAdd FPAdder(operand1,operand2,low, FPAddition);
+	FPAdd FPAdder(operand1[11:0],operand2[11:0],low, FPAddition);
 
 	wire ovflow3;
 	FloatingPointMultiplier FPMultiplier(operand1,operand2, FPMultiplication, ovflow3);
